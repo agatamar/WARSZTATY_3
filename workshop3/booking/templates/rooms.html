@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>List of rooms</h2>
+
+<table>
+<tr><th>PK</th><th>Room's name</th><th>Volume</th><th>Projector availability</th><th>Occupied</th><th></th><th></th></tr>
+
+{% for r in rooms_list %}
+		<tr><td>{{ r.id }}</td>
+            <td><a href ="{% url 'room' r.id %}">{{ r.name }}</td>
+			<td>{{ r.volume }}</td>
+			<td>{{ r.projector_availability }}</td>
+			{%if r.id in booked_today%}
+				<td>Yes</td>
+			{% else %}
+				<td>No</td>
+			{%endif%}
+
+			<td><a href="{% url 'modifyRoom' r.id %}">Edit</a></td>
+			<td><a href="{% url 'deleteRoom' r.id %}">Delete</a></td>
+		</tr>
+{% endfor %}	
+
+</table>
+
+<h3><a href="{% url 'newRoom' %}">Add room</a></h3>
+
+{% endblock %}

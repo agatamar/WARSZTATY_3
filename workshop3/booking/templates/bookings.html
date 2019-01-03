@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>List of bookings</h2>
+
+<table>
+<tr><th>PK</th><th>Booking date</th><th>Comment</th><th>Room</th><th></th><th></th></tr>
+
+{% for b in bookings_list %}
+		<tr><td>{{ b.id }}</td>
+            <td>{{ b.booking_date }}</td>
+			<td>{{ b.comment }}</td>
+			<td>{{ b.room }}</td>
+			<td><a href="{% url 'modifyBooking' b.id b.room_id %}">Edit</a></td>
+			<td><a href="{% url 'deleteBooking' b.id %}">Delete</a></td>
+		</tr>
+{% endfor %}
+
+</table>
+
+<h3><a href="{% url 'newBooking' %}">New Booking</a></h3>
+
+{% endblock %}

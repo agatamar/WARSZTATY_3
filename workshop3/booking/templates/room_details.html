@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Room's details</h2>
+
+<table>
+<tr><th>PK</th><th>Room's name</th><th>Volume</th><th>Projector availability</th><th></th><th></th></tr>
+		<tr><td>{{ r.id }}</td>
+            <td>{{ r.name }}</td>
+			<td>{{ r.volume }}</td>
+			<td>{{ r.projector_availability }}</td>
+			<td><a href="{% url 'modifyRoom' r.id %}">Edit</a></td>
+			<td><a href="{% url 'deleteRoom' r.id %}">Delete</a></td>
+		</tr>
+
+</table>
+
+<h3><a href="{% url 'newBooking' r.id %}">Book this room</a></h3>
+
+<h3>Booked dates</h3>
+<table>
+<tr><th>PK</th><th>Booking date</th><th>Comment</th><th>Room</th></tr>
+
+{% for b in booked_dates %}
+		<tr><td>{{ b.id }}</td>
+            <td>{{ b.booking_date }}</td>
+			<td>{{ b.comment }}</td>
+			<td>{{ b.room }}</td>
+		</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
+
+</body>
+</html>

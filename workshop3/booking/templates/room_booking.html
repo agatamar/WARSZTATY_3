@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>New room's booking</h1>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+               <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="POST" class="roombooking-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
+    <h3>Booked dates</h3>
+    <table>
+    <tr><th>PK</th><th>Booking date</th><th>Comment</th><th>Room</th></tr>
+
+    {% for b in booked_dates %}
+            <tr><td>{{ b.id }}</td>
+                <td>{{ b.booking_date }}</td>
+                <td>{{ b.comment }}</td>
+                <td>{{ b.room }}</td>
+            </tr>
+    {% endfor %}
+
+    </table>
+
+{% endblock %}
+</body>
+</html>

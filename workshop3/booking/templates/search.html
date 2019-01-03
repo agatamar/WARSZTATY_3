@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% extends 'base.html' %}
+</head>
+<body>
+
+
+{% block content %}
+    <h3>Room's searching parameters</h3>
+    <form method="POST" class="room-form">{% csrf_token %}
+        {{ form.as_p }}
+        <label>Date:</label>
+        {{form_b.booking_date}}</br></br>
+        <button type="submit" class="btn btn-default">Search</button>
+    </form>
+
+    <h2>Found rooms:</h2>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+               <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <table>
+    <tr><th>PK</th><th>Room's name</th><th>Volume</th><th>Projector availability</th><th>Occupied</th></tr>
+
+    {% for r in rooms_list %}
+            <tr><td>{{ r.id }}</td>
+                <td><a href ="{% url 'room' r.id %}">{{ r.name }}</td>
+                <td>{{ r.volume }}</td>
+                <td>{{ r.projector_availability }}</td>
+                {%if r.id in booked_for_given_date%}
+                    <td>Yes</td>
+                {% else %}
+                    <td>No</td>
+                {%endif%}
+            </tr>
+    {% endfor %}
+
+    </table>
+
+{% endblock %}
+</body>
+</html>
