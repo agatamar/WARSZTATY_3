@@ -129,8 +129,12 @@ class search(View):
         form_b = BookingForm(request.POST)
         if form.is_valid():
             room = form.save(commit=False)
-            date_0 = str(request.POST.get('booking_date'))
-            date=datetime.strptime(date_0, "%Y-%m-%d").date()
+            date_day=request.POST.get('booking_date_day')
+            date_month=request.POST.get('booking_date_month')
+            date_year=request.POST.get('booking_date_year')
+            date=date_year+'-'+date_month+'-'+date_day
+            # date_0 = str(request.POST.get('booking_date'))
+            # date=datetime.strptime(date_0, "%Y-%m-%d").date()
             #date = parse_date(date_str)
             name=request.POST.get("name")
             volume=request.POST.get("volume")
