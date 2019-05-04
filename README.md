@@ -1,4 +1,4 @@
-#### WARSZTATY_3 
+#### Workshop_3 
 
 Technical requirements: Python 3.6, Django 2.1.3,Faker 1.0.2, please see requirements.txt
 
