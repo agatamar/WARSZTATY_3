@@ -1,22 +1,18 @@
-# WARSZTATY_3
+#### WARSZTATY_3 
 
-Cel:	napisanie	prostej	aplikacji	do	rezerwowania	sal	konferencyjnych	w biurowcu.
-Użytkownik	może	rezerwować	sale	jedynie	na	cały	dzień.
+Technical requirements: Python 3.6, Django 2.1.3,Faker 1.0.2, please see requirements.txt
 
-Funkcje	aplikacji:
-1.	 Jako	użytkownik	chcę	po	wejściu	na	stronę	widzieć	wszystkie	sale	konferencyjne	i	ich	status
-danego	dnia:	zajęte	lub	wolne.	Obok	nazwy	każdej	sali	chcę	mieć	link	do	modyfikacji	danych	sali
-oraz	do	jej	usunięcia.
-2.	 Jako	użytkownik	po	kliknięciu	w	nazwę	sali	chcę	zobaczyć	wszystkie	dane	sali:	jej	nazwę,
-pojemność	i	informację,	czy	ma	rzutnik.	
-Dodatkowo	chcę	zobaczyć	listę	dni,	kiedy	sala	będzie	zajęta,	nie	chcę	widzieć	dni,	które	minęły.
-Chcę	widzieć	link,	który	pozwoli	zarezerwować	tę	salę.
-3.	 Jako	użytkownik	chcę	móc	dodać	nową	salę.
-4.	 Jako	użytkownik	po	wejściu	na	stronę	edycji	sali	chcę	móc	podać	dane	sali	(nazwa,	pojemność,
-rzutnik,	ew.	inne	dane).
-5.	 Jako	użytkownik	po	wejściu	na	stronę	z	rezerwacją	sali	ponownie	chcę	zobaczyć	listę	dni,	w	których
-sala	będzie	zajęta	(warunki	jak	w	pkt.	2).	Chcę	móc	podać	datę	rezerwacji	danej	sali.	System
-powinien	dbać	o	to,	by	nie	dublować	rezerwacji	danego	dnia	dla	danej	sali	i	żeby	data	nie	była	z
-przeszłości.
-6.	 Jako	użytkownik	chcę	móc	wyszukać	sale	z	podaniem	następujących	warunków:
-nazwę	sali, dzień, pojemność	sali, dostępność	rzutnika.
+Simple application for booking conference rooms in an office building.
+The user can only book rooms for whole day.
+
+Application features:
+1.	 On the home page user sees all the conference rooms and their status of the day: free or busy. Next to the name of each room there is a link to modify the room's data
+and also an option to remove it.
+2.	 A user can click on the name of the room and see all the room's data: its name,
+capacity and information, whether it has a projector. In addition, user sees a list of days when the room is booked, but does not see days that have passed.
+The user will see a link that will allow to book this room.
+3.	 The user can add a new room.
+4.	 User after entering the edit option for a room, can provide data (name, capacity,
+projector, if necessary, other data).
+5.	 After entering the reservation,user can see again a list of booked dates for chosen room(conditions as in point 2). The user can specify the booking date. System takes care not to duplicate any booking date.
+6.	 User can search for rooms with the following criteria: room name, day, room capacity, projector availability.

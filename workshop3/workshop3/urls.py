@@ -30,5 +30,5 @@ urlpatterns = [
     #path('modifyBooking/<int:id>', modifyBooking.as_view(), name='modifyBooking'),
     path('deleteBooking/<int:id>', deleteBooking.as_view(), name='deleteBooking'),
     re_path(r'^modifyBooking/(?P<id>[0-9]+)/(?P<room>[0-9]+)$',modifyBooking.as_view(),name='modifyBooking'),
-    path('search', search.as_view(),name='search'),
+    path('search/', search.as_view(),name='search'),
 ]

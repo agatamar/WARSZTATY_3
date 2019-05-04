@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for workshop3 project.
 
