@@ -2,6 +2,8 @@
 
 Technical requirements: Python 3.6, Django 2.1.3,Faker 1.0.2, please see requirements.txt
 
+Example screenshot from application: workshop3_screenshot.png
+
 Simple application for booking conference rooms in an office building.
 The user can only book rooms for whole day.
 
